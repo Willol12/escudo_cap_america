@@ -1,0 +1,97 @@
+body {
+  background: linear-gradient( to bottom, var(--color3), var(--color4), var(--color3));
+  --color3: rgb(0, 0, 0);
+  --color4: rgb(0, 255, 157) ;
+}
+
+.circle {
+  border-radius: 50%; /*Independente da altura vai fazer uma volta de 50% em todos os cantos
+  por isso todos vão ficar arredondados*/
+  display: flex; /* o display flex centraliza os circulos no caso um dentro do outro*/
+  align-items: center; /*alinhamento dos itens*/
+  justify-content: center; /*atráves desses 3 comandos acima vai ser sentralizado tanto na horizontal quanto na vertical*/
+  border: 1px solid #3c404f; /*Colocar bordas na imagem*/
+  background: linear-gradient( to right, var(--color1), var(--color2), var(--color1));
+  /*Degrade linear no caso do comando ele vai pra direita pegando 2 tonalidades de cor
+  ficando claro primeiramente depois escuro e depois claro denovo*/
+}
+#circle1 {
+  margin: auto; /*Centraliza no centro da tela*/
+  width: 256px; 
+  height: 256px;
+  --color1: red;
+  --color2: rgb(185, 0, 0);
+
+  
+  
+}
+#circle2 {
+  width: 206px;
+  height: 206px;
+  --color1: white;
+  --color2:  rgb(148, 148, 148);
+  
+}
+#circle3 {
+  width: 156px;
+  height: 156px;
+  --color1: red;
+  --color2: rgb(185, 0, 0);
+}
+#circle4 {
+  width: 106px;
+  height: 106px;
+  --color1: blue;
+  --color2: rgb(0, 0, 117);
+  
+}
+/*Para fazer a estrela foi bem complicado observei que se eu adicionar o border-top
+os triangulos vão pra cima ai eu deixei assim com left right e bottom*/
+#star {
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 35px solid white;
+  transform: rotate(180DEG);
+}
+
+#star:before {
+  position: absolute;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 35px solid white;
+  transform: rotate(70DEG);
+  content: "";
+  left: -50px;
+
+}
+
+#star:after {
+  position: absolute;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 35px solid white;
+  transform: rotate(-70DEG);
+  content: "";
+  left: -48.8px;
+  top: 0.1px;
+}
+
+
+/*Criação de bordas
+Nota sobre bordas quando criamos bordas por exemplo
+border-top 20px solid transparent 
+border-left 20px solid transparent
+border-right 20px solid transparent
+border-bottom 20px solid red
+width: 100px;
+height: 100px;
+Fica uma imagem de quadrado por todoas terem a mesma quantidade de pixel e esta
+Em posicionamento diferente e nas bordas possui uma diagonal
+Quando diminuimos a altura ou a largura vai se achatando as bordas
+até que você coloque a altura e a largura em 0 pixel onde se forma 4 trinagulos
+width: 0px;
+height: 0px;
+Eai é só deixar o triangulo que você precisa com a cor que deseja e o resto transparente
+Para não incomodar e posicionar no lugar certo para depois criar um before e after
+E posicionar com o transform: rotate até formar a estrela 
+*/
